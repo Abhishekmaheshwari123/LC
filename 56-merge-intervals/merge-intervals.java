@@ -9,8 +9,9 @@ class Solution {
         l.add(arr[0][1]);
         ll.add(new ArrayList<>(l));
         for(int i = 1; i < arr.length; i++){
-            if(ll.get(ll.size()-1).get(1) >= arr[i][0]){
-                ll.get(ll.size() - 1).set(1 , Math.max(ll.get(ll.size()-1).get(1) , arr[i][1]));
+            int size = ll.size();
+            if(ll.get(size-1).get(1) >= arr[i][0]){
+                ll.get(size - 1).set(1 , Math.max(ll.get(size-1).get(1) , arr[i][1]));
             }
             else{
                 ArrayList<Integer> p = new ArrayList<>();
