@@ -5,13 +5,11 @@ class Solution {
         // System.out.println(convert(89));
         for(int i = 0; i < nums.length; i++){
             int ele = convert(nums[i]);
-            if(!mp.containsKey(ele)){
-                mp.put(ele , nums[i]);
-            }
-            else {
-                maxi = Math.max(maxi , nums[i] + mp.get(ele));
+            if(mp.containsKey(ele)){
+                if(maxi <  nums[i] + mp.get(ele))maxi =  nums[i] + mp.get(ele);
                 mp.put(ele , Math.max(mp.get(ele) , nums[i]));
             }
+                else mp.put(ele , nums[i]);
         }
         return  maxi;
     }
