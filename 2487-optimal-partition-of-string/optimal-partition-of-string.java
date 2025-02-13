@@ -1,14 +1,14 @@
 class Solution {
     public int partitionString(String s) {
         int c = 1;
-        int []arr = new int[26];
+        HashSet<Character> st = new HashSet<>();
         for(int i = 0; i < s.length(); i++){
             char a = s.charAt(i);
-            if(arr[a - 'a'] != 0){
+            if(st.contains(a)){
                 c++;
-                Arrays.fill(arr,0);
+                st.clear();
             }
-                arr[a - 'a']++;
+                st.add(a);
         }
         return c;
     }
