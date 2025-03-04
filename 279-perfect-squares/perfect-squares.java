@@ -5,7 +5,7 @@ class Solution {
             arr[i] = i*i;
         }
         int index = search(n,arr);
-        System.out.println(index);
+        // System.out.println(index);
         if(arr[index]  == n)return 1;
         int [][]dp = new int[index+1][n+1];
         for(int i = 0; i < dp.length; i++){
