@@ -17,13 +17,15 @@ class Solution {
         HashSet<Integer> st = new HashSet<>();
         for(int i = 2; i < arr.length-1; i++)if(arr[i] == 1)st.add(i);
         // System.out.println(st);
-        for(int i = 2; i <= n/2; i++)
+        for(int i = 2; i <= n/2; i++){
+            if(arr[i] == 1)st.add(i);
             if(st.contains(n - i) && st.contains(i)){
                 List<Integer> ds = new ArrayList<>();
                 ds.add(i);
                 ds.add(n-i);
                 ans.add(new ArrayList<>(ds));
             }
+        }
         return ans;
     }
 }
