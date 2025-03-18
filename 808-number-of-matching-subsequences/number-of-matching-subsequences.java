@@ -35,9 +35,20 @@ class Solution {
         return c;
     }
     int upper(ArrayList<Integer> ls , Character curr , int last){
-        for(int i = 0; i < ls.size(); i++){
-            if(last < ls.get(i))return ls.get(i);
+        int low=0;
+        int high=ls.size()-1;
+        int min=Integer.MAX_VALUE;
+        while(low<=high){
+            int mid=(low+high)/2;
+            if(ls.get(mid)>last){
+                high=mid-1;
+                min=Math.min(min,ls.get(mid));
+
+            }
+            else{
+                low=mid+1;
+            }
         }
-        return -1;
+        return min == Integer.MAX_VALUE ? -1 : min;
     }
 }
