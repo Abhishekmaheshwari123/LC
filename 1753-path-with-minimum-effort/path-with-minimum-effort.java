@@ -15,6 +15,7 @@ class Solution {
             int dis = curr.dis;
             int row = curr.row;
             int col = curr.col;
+            if(row == arr.length-1 && col == arr[0].length-1)return dis;
             for(int i = 0; i < 4; i++){
                 int newr = row + r[i];
                 int newc = col + c[i];
