@@ -36,17 +36,18 @@ class Solution {
                 if(nn.right != null)q.add(new pair(nn.right,level+1,vertical + 1));
             }            
         }
-        List<List<Integer>> l  = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
         for(TreeMap<Integer,PriorityQueue<Integer>> pq : mp.values()){
-            l.add(new ArrayList<>());
-            for(PriorityQueue<Integer> elements : pq.values()){
-                while(!elements.isEmpty()){
-                    l.get(l.size() - 1).add(elements.remove());
+            List<Integer> l = new ArrayList<>();
+            for(PriorityQueue<Integer> elements_in_pq : pq.values()){
+                while(!elements_in_pq.isEmpty()){
+                    l.add(elements_in_pq.remove());
                 }
             }
+            ans.add(new ArrayList<>(l));
         }
 
-        return l;
+        return ans;
     }
 }
 class pair{
