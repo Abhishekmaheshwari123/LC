@@ -10,15 +10,16 @@ class Solution {
                 mp.put(s , mp.getOrDefault(s , 0) + 1);
             }
         }
-        // System.out.println(mp);
-        PriorityQueue<String> pq = new PriorityQueue<>((a,b) -> {
-           return  mp.get(b) == mp.get(a) ? a.compareTo(b) :  mp.get(b) - mp.get(a) ;
-            });
-        for(String s: mp.keySet()){
-            pq.offer(s);
+        String ans = "";
+        int maxFreq = 0;
+        for (String s : mp.keySet()) {
+            int freq = mp.get(s);
+            if (freq > maxFreq || (freq == maxFreq && s.compareTo(ans) < 0)) {
+                ans = s;
+                maxFreq = freq;
+            }
         }
-        return pq.peek();
-
+        return ans;
         // return "";
     }
 }
