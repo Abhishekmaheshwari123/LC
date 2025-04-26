@@ -10,7 +10,7 @@ class Solution {
                 mp.put(s , mp.getOrDefault(s , 0) + 1);
             }
         }
-        System.out.println(mp);
+        // System.out.println(mp);
         PriorityQueue<String> pq = new PriorityQueue<>((a,b) -> {
            return  mp.get(b) == mp.get(a) ? a.compareTo(b) :  mp.get(b) - mp.get(a) ;
             });
