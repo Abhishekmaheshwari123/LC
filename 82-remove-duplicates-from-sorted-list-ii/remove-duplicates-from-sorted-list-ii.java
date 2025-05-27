@@ -19,7 +19,6 @@ class Solution {
             curr = curr.next;
         }
         else{
-            System.out.println(curr.val);
             dummy.next = curr;
             dummy = dummy.next;
             curr = curr.next;
