@@ -24,11 +24,11 @@ class Solution {
         return head;
     }
     int find(int a, int b){
-        int minn = Math.min(a,b);
-        while(minn > 0){
-            if(a%minn == 0 && b%minn == 0)return minn;
-            minn--;
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
         }
-        return 1;
+        return Math.abs(a); 
     }
 }
